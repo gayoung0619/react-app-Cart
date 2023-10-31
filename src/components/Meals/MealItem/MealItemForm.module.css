@@ -1,0 +1,19 @@
+@charset "utf-8";.form {
+    text-align: right;
+}
+
+.form button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #f3d174;
+    border: 1px solid #f3d174;
+    color: white;
+    padding: 0.25rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.form button:hover,
+.form button:active {
+    transform: scale(1.1);
+}
