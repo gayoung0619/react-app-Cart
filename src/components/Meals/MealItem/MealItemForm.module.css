@@ -2,7 +2,7 @@
     text-align: right;
 }
 
-.form button {
+.form .btn_add {
     font: inherit;
     cursor: pointer;
     background-color: #f3d174;
@@ -13,7 +13,7 @@
     font-weight: bold;
 }
 
-.form button:hover,
-.form button:active {
+.form .btn_add:hover,
+.form .btn_add:active {
     transform: scale(1.1);
 }

@@ -3,6 +3,7 @@ import HeaderCartButton from "./HeaderCartButton";
 import mainImage from '../../assets/main_visual.jpeg';
 import logo from '../../assets/logo.png'
 import classes from "./Header.module.css";
+
 const Header = props => {
 	return(
 		<Fragment>
@@ -10,7 +11,7 @@ const Header = props => {
 				<h1 className={classes.logo}>
 					<img src={logo} alt="TWG Tea Logo - Luxury Tea Brand"/>
 				</h1>
-				<HeaderCartButton />
+				<HeaderCartButton onShowCart={props.onShowCart} />
 			</header>
 			<div className={classes['main-image']}>
 				<img src={mainImage} alt="A table full of delicious food" />
