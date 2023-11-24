@@ -6,11 +6,11 @@ const MealItem = props => {
 	return (
 		<li className={classes.meal}>
 			<div className={classes.img_wrap}>
-				<img src={props.src} alt={props.description} />
+				<img src={`${process.env.PUBLIC_URL}/${props.src}`} alt={props.description} />
 				<div>
 					<h3>{props.name}</h3>
 					<div className={classes.description}>{props.description}</div>
-					<div className={classes.price}>{props.price}원</div>
+					<div className={classes.price}>{props.price.toLocaleString('ko-KR')}원</div>
 				</div>
 			</div>
 			<div>

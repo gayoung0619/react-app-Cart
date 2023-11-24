@@ -7,10 +7,10 @@ const AvailableMeals = () => {
 	const tea = useSelector((state) => state.teas);
 	const MealsList = tea.map(tea => (
 		<MealItem
-			key={tea.id}
+			key={tea.product_no}
 			src={tea.src}
 			alt={tea.alt}
-			id={tea.id}
+			id={tea.product_no}
 			name={tea.name}
 			description={tea.description}
 			price={tea.price}

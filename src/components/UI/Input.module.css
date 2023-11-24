@@ -17,3 +17,9 @@
     font: inherit;
     padding-left: 0.5rem;
 }
+
+.input button {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}

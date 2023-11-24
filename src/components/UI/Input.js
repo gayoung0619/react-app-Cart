@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Input.module.css";
+import { SlArrowUp, SlArrowDown } from "react-icons/sl";
+
 const Input = ({ count,setCount }) => {
 	const incrementCount = () => {
 		setCount(count + 1);
@@ -15,9 +17,9 @@ const Input = ({ count,setCount }) => {
 	}
 	return (
 		<div className={classes.input}>
-			<button type="button" onClick={incrementCount}>up</button>
+			<button type="button" onClick={incrementCount}><SlArrowUp /></button>
 			<input value={count} onChange={handleInputChange}/>
-			<button type="button" onClick={decrementCount}>down</button>
+			<button type="button" onClick={decrementCount}><SlArrowDown /></button>
 		</div>
 	);
 };
