@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-app-cart/static/css/main.db44f7a9.css",
-    "main.js": "/react-app-cart/static/js/main.75396121.js",
+    "main.js": "/react-app-cart/static/js/main.14273c12.js",
     "static/media/main_visual.jpeg": "/react-app-cart/static/media/main_visual.1bbd1b9fc715cc8569bd.jpeg",
     "static/media/logo.png": "/react-app-cart/static/media/logo.801e742b18d6f92df319.png",
     "index.html": "/react-app-cart/index.html",
     "main.db44f7a9.css.map": "/react-app-cart/static/css/main.db44f7a9.css.map",
-    "main.75396121.js.map": "/react-app-cart/static/js/main.75396121.js.map"
+    "main.14273c12.js.map": "/react-app-cart/static/js/main.14273c12.js.map"
   },
   "entrypoints": [
     "static/css/main.db44f7a9.css",
-    "static/js/main.75396121.js"
+    "static/js/main.14273c12.js"
   ]
 }
