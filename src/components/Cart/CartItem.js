@@ -1,16 +1,21 @@
 import classes from './CartItem.module.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import { cartActions } from '../../redux/cartSlice'
 
-const CartItem = (props) => {
+ const CartItem = (props) => {
+	const dispatch = useDispatch();
 	const [option, setOption] = useState(props.count);
 	const incrementCount = () => {
-		setOption(option + 1);
+		dispatch(cartActions.updateCartItem({ itemId: props.id, newOption: props.count + 1 }));
 	};
 	const decrementCount = () => {
-		if(option > 0) {
-			setOption(option - 1);
+		if (props.count > 0) {
+			dispatch(cartActions.updateCartItem({ itemId: props.id, newOption: props.count - 1 }));
 		}
 	}
+
+	// 각 항목의 가격을 계산합니다.
 	const itemPrice = props.price * props.count;
 	return (
 		<li className={classes['cart-item']}>

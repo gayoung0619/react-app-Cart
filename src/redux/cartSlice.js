@@ -32,6 +32,20 @@ const cartSlice = createSlice({
 				state.items.push(updatedItem);
 			}
 		},
+		updateCartItem: (state, action) => {
+			const { itemId, newOption } = action.payload;
+			const updatedItems = state.items.map(item => {
+				if (item.id === itemId) {
+					return {
+						...item,
+						count: newOption,
+					};
+				}
+				return item;
+			});
+
+			state.items = updatedItems;
+		},
 		removeItem (state) {}
 	}
 });

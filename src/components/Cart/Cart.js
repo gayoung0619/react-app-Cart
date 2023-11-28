@@ -2,8 +2,17 @@ import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from 'react-redux';
+import {useEffect, useState} from "react";
 const Cart = props => {
 	const cart = useSelector(state => state.cart.items);
+	const [cartPrice, setCartPrice] = useState(0);
+	useEffect(()=>{
+		console.log("Cart items changed:", cart);
+		const updatedCartPrice = cart.reduce((acc, cur) => acc + cur.price * cur.count, 0)
+		setCartPrice(updatedCartPrice)
+	}, [cart]);
+
+
 	const cartItems = (
 		<ul className={classes['cart-items']}>
 			{cart.map(item =>
@@ -16,10 +25,8 @@ const Cart = props => {
 				/>
 			)}
 		</ul>
-	)
-	const cartPrice = cart.reduce((acc, cur) => {
-		return acc + cur.price * cur.count
-	},0)
+	);
+	console.log("Render: CartPrice =", cartPrice);
 	return (
 		<Modal onClose={props.onClose}>
 			{cart.length <= 0?
