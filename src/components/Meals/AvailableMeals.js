@@ -1,5 +1,6 @@
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
+import LoadingIndicator from "../UI/LoadingIndicator";
 import classes from './AvailableMeals.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQuery, useMutation } from "react-query";
@@ -15,7 +16,7 @@ const AvailableMeals = () => {
 		"teas",
 		fetchTeas
 	)
-	if(isLoading) return <div>isLoading...</div>
+	if(isLoading) return <LoadingIndicator />
 	if(isError) return <div>{error.toString()}</div>
 
 	return (
