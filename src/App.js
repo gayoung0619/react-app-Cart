@@ -1,9 +1,11 @@
 import Header from "./components/Layout/Header";
 import {useState} from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
-import Modal from "./components/UI/Modal";
-// import CartProvider from "./store/CartProvider";
+
+const queryClient = new QueryClient();
 function App() {
 	const [cartIsShown, setCartIsShown] = useState(false);
 	const showCartHandler = () => {
@@ -13,13 +15,16 @@ function App() {
 		setCartIsShown(false);
 	}
 	return (
-		<div>
-			{cartIsShown && <Cart onClose={hideCartHandler} />}
-			<Header onShowCart={showCartHandler} />
-			<main>
-				<Meals />
-			</main>
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<div>
+				{cartIsShown && <Cart onClose={hideCartHandler} />}
+				<Header onShowCart={showCartHandler} />
+				<main>
+					<Meals />
+				</main>
+			</div>
+			<ReactQueryDevtools />
+		</QueryClientProvider>
 	);
 }
 
