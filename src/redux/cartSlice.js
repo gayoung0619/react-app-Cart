@@ -32,7 +32,7 @@ const cartSlice = createSlice({
 				state.items.push(updatedItem);
 			}
 		},
-		updateCartItem: (state, action) => {
+		updateCartItem (state, action) {
 			const { itemId, newOption } = action.payload;
 			const updatedItems = state.items.map(item => {
 				if (item.id === itemId) {
@@ -43,7 +43,6 @@ const cartSlice = createSlice({
 				}
 				return item;
 			});
-
 			state.items = updatedItems;
 		},
 		removeItem (state) {}
