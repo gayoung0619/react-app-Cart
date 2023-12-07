@@ -7,11 +7,9 @@ const Cart = props => {
 	const cart = useSelector(state => state.cart.items);
 	const [cartPrice, setCartPrice] = useState(0);
 	useEffect(()=>{
-		console.log("Cart items changed:", cart);
 		const updatedCartPrice = cart.reduce((acc, cur) => acc + cur.price * cur.count, 0)
 		setCartPrice(updatedCartPrice)
 	}, [cart]);
-
 
 	const cartItems = (
 		<ul className={classes['cart-items']}>
@@ -26,7 +24,6 @@ const Cart = props => {
 			)}
 		</ul>
 	);
-	console.log("Render: CartPrice =", cartPrice);
 	return (
 		<Modal onClose={props.onClose}>
 			{cart.length <= 0?

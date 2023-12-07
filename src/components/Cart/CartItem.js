@@ -7,11 +7,17 @@ import { cartActions } from '../../redux/cartSlice'
 	const dispatch = useDispatch();
 	const [option, setOption] = useState(props.count);
 	const incrementCount = () => {
-		dispatch(cartActions.updateCartItem({ itemId: props.id, newOption: props.count + 1 }));
+		dispatch(cartActions.updateCartItem({
+			itemId: props.id,
+			newOption: props.count + 1
+		}));
 	};
 	const decrementCount = () => {
 		if (props.count > 0) {
-			dispatch(cartActions.updateCartItem({ itemId: props.id, newOption: props.count - 1 }));
+			dispatch(cartActions.updateCartItem({
+				itemId: props.id,
+				newOption: props.count - 1
+			}));
 		}
 	}
 
