@@ -45,7 +45,12 @@ const cartSlice = createSlice({
 			});
 			state.items = updatedItems;
 		},
-		removeItem (state) {}
+		removeItem (state) {
+			return {
+				...state,
+				items: []
+			}
+		}
 	}
 });
 
